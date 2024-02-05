@@ -1,0 +1,24 @@
+{
+  "name": "orders-observer",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/orders-observer/src",
+  "projectType": "application",
+  "targets": {
+    "serve": {
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "orders-observer:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "orders-observer:build:development"
+        },
+        "production": {
+          "buildTarget": "orders-observer:build:production"
+        }
+      }
+    }
+  },
+  "tags": []
+}
