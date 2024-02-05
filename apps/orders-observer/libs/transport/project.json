@@ -1,0 +1,19 @@
+{
+  "name": "orders-observer-transport",
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/orders-observer/libs/transport/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/orders-observer/libs/transport",
+        "main": "apps/orders-observer/libs/transport/src/index.ts",
+        "tsConfig": "apps/orders-observer/libs/transport/tsconfig.lib.json",
+        "assets": ["apps/orders-observer/libs/transport/*.md"]
+      }
+    }
+  },
+  "tags": []
+}

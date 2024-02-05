@@ -1,0 +1,46 @@
+{
+  "name": "api",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/api/app/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+			"executor": "@nx/webpack:webpack",
+			"outputs": ["{options.outputPath}"],
+			"defaultConfiguration": "production",
+			"options": {
+				"target": "node",
+				"compiler": "tsc",
+				"outputPath": "dist/apps/api/app",
+				"main": "apps/api/app/src/main.ts",
+				"tsConfig": "apps/api/app/tsconfig.app.json",
+				"assets": ["apps/api/app/src/assets"],
+				"webpackConfig": "apps/api/app/webpack.config.js"
+			},
+			"configurations": {
+				"development": {},
+				"production": {}
+			}
+		},
+    "serve": {
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "api:build",
+        "runBuildTargetDependencies": true,
+				"inspect": "inspect",
+				"host": "localhost",
+				"port": 9231
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "api:build:development"
+        },
+        "production": {
+          "buildTarget": "api:build:production"
+        }
+      }
+    }
+  },
+  "tags": []
+}

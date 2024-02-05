@@ -1,0 +1,19 @@
+{
+  "name": "api-slice",
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/api/libs/slice/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/api/libs/slice",
+        "main": "apps/api/libs/slice/src/index.ts",
+        "tsConfig": "apps/api/libs/slice/tsconfig.lib.json",
+        "assets": ["apps/api/libs/slice/*.md"]
+      }
+    }
+  },
+  "tags": []
+}

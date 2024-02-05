@@ -1,0 +1,46 @@
+{
+  "name": "orders-observer",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/orders-observer/app/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+			"executor": "@nx/webpack:webpack",
+			"outputs": ["{options.outputPath}"],
+			"defaultConfiguration": "production",
+			"options": {
+				"target": "node",
+				"compiler": "tsc",
+				"outputPath": "dist/apps/orders-observer/app",
+				"main": "apps/orders-observer/app/src/main.ts",
+				"tsConfig": "apps/orders-observer/app/tsconfig.app.json",
+				"assets": ["apps/orders-observer/app/src/assets"],
+				"webpackConfig": "apps/orders-observer/app/webpack.config.js"
+			},
+			"configurations": {
+				"development": {},
+				"production": {}
+			}
+		},
+    "serve": {
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "orders-observer:build",
+        "runBuildTargetDependencies": true,
+				"inspect": "inspect",
+				"host": "localhost",
+				"port": 9230
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "orders-observer:build:development"
+        },
+        "production": {
+          "buildTarget": "orders-observer:build:production"
+        }
+      }
+    }
+  },
+  "tags": []
+}

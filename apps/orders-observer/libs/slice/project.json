@@ -1,0 +1,19 @@
+{
+  "name": "orders-observer-slice",
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/orders-observer/libs/slice/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/orders-observer/libs/slice",
+        "main": "apps/orders-observer/libs/slice/src/index.ts",
+        "tsConfig": "apps/orders-observer/libs/slice/tsconfig.lib.json",
+        "assets": ["apps/orders-observer/libs/slice/*.md"]
+      }
+    }
+  },
+  "tags": []
+}

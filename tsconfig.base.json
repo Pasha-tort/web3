@@ -5,6 +5,7 @@
     "sourceMap": true,
     "declaration": false,
     "moduleResolution": "node",
+    "strictPropertyInitialization": false,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "importHelpers": true,
@@ -14,7 +15,17 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@task-test/api-slice": ["apps/api/libs/slice/src/index.ts"],
+      "@task-test/configs": ["libs/configs/src/index.ts"],
+      "@task-test/orders-observer-slice": [
+        "apps/orders-observer/libs/slice/src/index.ts"
+      ],
+      "@task-test/orders-observer-transport": [
+        "apps/orders-observer/libs/transport/src/index.ts"
+      ]
+    }
   },
+  "include": ["apps/**/*"],
   "exclude": ["node_modules", "tmp"]
 }

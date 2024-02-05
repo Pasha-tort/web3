@@ -2,15 +2,15 @@ version: "3.8"
 services:
   mongodb:
     image: mongo
-    container_name: mongodb
+    container_name: mongodb-sfxdx
     ports:
       - "27017:27017"
     restart: always
-    environment:
-      MONGO_LOGIN: root
-      MONGO_PASSWORD: root
-    volumes:
-      - ./mongo:/data/db
+    # environment:
+    #   MONGO_INITDB_ROOT_USERNAME: root
+    #   MONGO_INITDB_ROOT_PASSWORD: root
+    # volumes:
+    #   - ./mongo:/data/db
   rmq:
     image: rabbitmq:3.12.9-management
     hostname: rabbitmq
