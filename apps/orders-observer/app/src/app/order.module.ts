@@ -4,13 +4,12 @@ import { EventService } from "./event.service";
 import { Web3ConnectProvider } from "./providers/web3-connect.provider";
 import { ConfigModule } from "@nestjs/config";
 import { MongooseModule } from "@nestjs/mongoose";
-import { getMongoConfig } from "../config/mongo.config";
 import path from "path";
 import { OrderFeature } from "./schemas/order.schema";
 import { OrdersController } from "./order.controller";
 import { OrderRepository } from "./repository/order.repository";
 import { RMQModule } from "nestjs-rmq";
-import { getRmqConfig } from "@task-test/configs";
+import { getRmqConfig, getMongoConfig } from "@task-test/configs";
 
 @Module({
   imports: [

@@ -10,7 +10,6 @@ export class AppController {
     private readonly ordersObserverRmqService: OrdersObserverRmqService
   ) {}
 
-  @ApiCreatedResponse({ type: [OrdersObserverApi.getOrders.ResponseDto] })
   @Get(OrdersObserverApi.getOrders.path)
   getOrders(
     @Query()
@@ -19,10 +18,6 @@ export class AppController {
     return this.ordersObserverRmqService.getOrders(query);
   }
 
-  @ApiCreatedResponse({
-    description: "list ordersId",
-    type: OrdersObserverApi.getMatchingOrder.ResponseDto,
-  })
   @Get(OrdersObserverApi.getMatchingOrder.path)
   getMatchingOrder(
     @Query()
