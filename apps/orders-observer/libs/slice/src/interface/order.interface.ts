@@ -1,7 +1,7 @@
 export enum StatusOrderEnum {
-  active = "active",
-  partially = "partially",
-  close = "close",
+  ACTIVE = "active",
+  PARTIALLY = "partially",
+  CLOSE = "close",
 }
 export interface IOrder {
   status: StatusOrderEnum;

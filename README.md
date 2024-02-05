@@ -31,3 +31,8 @@ yarn nx serve <name-app>
 
 - [api](apps/api/app/src/main.ts) - предоставляет api для запросов к бекэнду, по rmq делает запросы к приложению [orders-observer](apps/orders-observer/app/src/main.ts)
   - [api-slice](apps/api/libs/slice/src/index.ts) - здесь описаны dto и интерфейсы, которые характерны для микросервиса [api](apps/orders-observer/app/src/main.ts)
+
+> Задание не доделано
+>
+> - не смог разкодировать данные событий которые приходят от смарт контракта, надо смотреть в сторону подписки на сам контракт
+> - не подключил до конца swagger(не описаны Response'ы)

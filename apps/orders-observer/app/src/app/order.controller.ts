@@ -12,13 +12,13 @@ export class OrdersController {
   @RMQTransform()
   @OrdersObserverRmqService.getOrdersRpc()
   async getOrders(data: OrdersContracts.getOrders.RequestDto) {
-    return this.orderRepository.test();
+    return this.orderRepository.getOrders(data);
   }
 
   @RMQValidate()
   @RMQTransform()
   @OrdersObserverRmqService.getMatchingOrderRpc()
   async getMatchingOrder(data: OrdersContracts.getMatchingOrder.RequestDto) {
-    return this.orderRepository.test();
+    return this.orderRepository.getMatchingOrders(data);
   }
 }

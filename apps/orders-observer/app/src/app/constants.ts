@@ -3,6 +3,7 @@ export const ORDERS_SUB_TOKEN_PROVIDER = "ordersSubProvider";
 
 export const EVENT_HANDLER_METADATA_KEY = "eventHandler";
 
+// здесь закодированные данные, потому что разкодировать данные в runtime у меня не вышло
 export const KEY_ORDER_CREATE =
   "0x6d28e6c407b89084457b40026a6f5698b5e90f5a2f16f503bd5f42a1a26020ff";
 export const KEY_ORDER_MATCHES =
